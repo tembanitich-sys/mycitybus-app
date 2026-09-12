@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-brand-red: #e2071f;
+  --color-brand-red-dark: #b80517;
+  --color-brand-navy: #103888;
+  --color-brand-navy-dark: #0b2761;
+  --color-brand-navy-light: #1b4bb0;
+  --color-brand-gold: #f0960a;
+  --color-brand-green: #10a848;
+  --color-brand-green-dark: #0c8038;
+  --color-ink: #15161d;
+  --color-paper: #f3f3f6;
+
+  --shadow-card: 0 1px 2px rgba(21, 22, 29, 0.04), 0 8px 24px -8px rgba(21, 22, 29, 0.14);
+  --shadow-card-lg: 0 4px 12px rgba(21, 22, 29, 0.06), 0 16px 40px -12px rgba(21, 22, 29, 0.22);
+  --shadow-phone: 0 30px 60px -20px rgba(16, 56, 136, 0.45), 0 10px 24px -10px rgba(0, 0, 0, 0.3);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  /* Hide scrollbars on the app viewport but keep it scrollable */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
